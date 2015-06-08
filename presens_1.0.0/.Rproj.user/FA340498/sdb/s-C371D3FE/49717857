@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: presens\nType: Package\nTitle: R Interface for PreSens Fiber Optic Data\nVersion: 1.0.0\nDate: 2015-02-10\nAuthor: Matthew A. Birk\nMaintainer: Matthew A. Birk <matthewabirk@gmail.com>\nDescription: Makes output files from select PreSens Fiber Optic Oxygen Transmitters easier to work with in R. See <http://www.presens.de> for more information about PreSens (Precision Sensing GmbH).\nImports: birk, marelac (>= 2.1.4)\nLicense: GPL-3\nEncoding: UTF-8",
+    "created" : 1423518364030.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4205580782",
+    "id" : "49717857",
+    "lastKnownWriteTime" : 1423593939,
+    "path" : "~/Documents/Working Directories/R/Packages/presens/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "# Created by Matthew A. Birk\n# Dependencies: birk, marelac\n# Converts % air saturation to other O2 units\n# Last updated: Feb 2015\n\n#' Convert Units of Oxygen\n#'\n#' Given the percent of oxygen compared to air-saturated water (at equilibrium with air) (i.e. percent air saturation), a list of commonly used units of oxygen partial pressures and concentrations are returned.\n#'\n#' Conversions are based on relationships and values from the package \\code{\\link[marelac]{marelac}}.\n#'\n#' @param perc_a.s. percent of air saturation. Default is 100\\%.\n#' @param salinity salinity of water sample (ppt). Default is 35 ppt.\n#' @param temp temperature of water sample (°C). Default is 25 °C.\n#' @param air_pres pressure of air overlying water sample (bar). Default is 1.013253 bar.\n#'\n#' @author Matthew A. Birk, \\email{matthewabirk@@gmail.com}\n#'\n#' @examples\n#' o2_unit_conv(perc_a.s. = 50)\n#' o2_unit_conv(perc_a.s. = 50, salinity = 0, temp = 10, air_pres = 1.2)['umol_per_l']\n#'\n#' @encoding UTF-8\n#' @export\n#' @import marelac\n#' @import birk\n\no2_unit_conv=function(perc_a.s.=100,salinity=35,temp=25,air_pres=1.013253){\n  x=list(\n  percent_a.s.=perc_a.s.,\n  percent_o2=marelac::atmComp('O2')*perc_a.s.,\n  hPa=birk::conv_unit((air_pres-marelac::vapor(S=salinity,t=temp))*marelac::atmComp('O2')*perc_a.s./100,'atm','hPa'),\n  torr=birk::conv_unit((air_pres-marelac::vapor(S=salinity,t=temp))*marelac::atmComp('O2')*perc_a.s./100,'atm','torr'),\n  mg_per_l=marelac::gas_satconc(S=salinity,t=temp,P=air_pres,species='O2')*1e-6*marelac::molweight('O2')*1e3*perc_a.s./100,\n  umol_per_l=marelac::gas_satconc(S=salinity,t=temp,P=air_pres,species='O2')*perc_a.s./100\n)\nattr(x[['percent_o2']],'names')=NULL\nattr(x[['hPa']],'names')=NULL\nattr(x[['torr']],'names')=NULL\nattr(x[['mg_per_l']],'names')=NULL\nattr(x[['umol_per_l']],'names')=NULL\nreturn(x)\n}",
+    "created" : 1423428036505.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4147669594",
+    "id" : "14FCAC52",
+    "lastKnownWriteTime" : 1423522858,
+    "path" : "~/Documents/Working Directories/R/Packages/presens/R/o2_unit_conv.R",
+    "project_path" : "R/o2_unit_conv.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
