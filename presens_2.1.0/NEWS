@@ -1,7 +1,4 @@
 -------------------------------------------------
-version x.y.z, yyyy-mm-dd
-
--------------------------------------------------
 version 2.1.0, 2016-07-27
 - last_o2():	new function
 - changed code to use measurements::conv_unit() rather than the defunct birk::conv_unit()
