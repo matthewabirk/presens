@@ -1,4 +1,4 @@
 import_o2               Import data from PreSens O2 transmitter
 last_o2                 Extract latest O2 values
 o2_unit_conv            Convert units of dissolved oxygen
-presens                 R Interface for PreSens Fiber Optic Data
+presens                 Interface for PreSens Fiber Optic Data
